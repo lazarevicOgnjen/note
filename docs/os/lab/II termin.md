@@ -94,7 +94,16 @@ FILE * f;
 
 ```c
 
-f = fopen("/proc/self/status", "r");
+f = fopen("file.txt", "r");
+f1 = fopen("file1.txt", "w");
+
+```
+
+> **upisujemo u fajl**
+
+```c
+
+fprintf(f1, "broj: %d", x);
 
 ```
 

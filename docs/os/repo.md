@@ -28,3 +28,5 @@ nakon cega ponovo unosimo `git commit -m "Gotov kolokvijum"`
  
 - `git push`
 - ukucamo **password**
+
+<br><br>

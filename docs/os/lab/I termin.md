@@ -1,4 +1,4 @@
-terminal
+**terminal**
 ---
 
 > **direktorijum**
@@ -21,7 +21,7 @@ terminal
 
 **`rm test.txt`** - izbrisati **test**
 
-<br> <br>
+
 
 
 

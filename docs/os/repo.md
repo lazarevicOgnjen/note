@@ -5,7 +5,7 @@
 kloniranje
 ---
 
-- `git clone`
+- `git clone ...`
 - yes
 - password
 - `cd KOL1`

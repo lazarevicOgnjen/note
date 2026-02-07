@@ -2,7 +2,7 @@
 
 <br>
 
-kloniranje
+**kloniranje**
 ---
 
 - `git clone ...`
@@ -13,7 +13,7 @@ kloniranje
 
 <br>
 
-komitovanje
+**komitovanje**
 ---
 
 - `git add *`

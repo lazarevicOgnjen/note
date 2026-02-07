@@ -37,12 +37,31 @@ tmp = atof(argv[i]);
 **rad sa stringovima**
 ---
 
+> **poredi 2 stringa i vraca 0 ako su stringovi isti**
+
 ```c
 
 strcmp(s1, "KRAJ")
 
 ```
-**vraca 0** ako su stringovi isti
+
+> **proverava da li se dati text nalazi u buff**
+
+```c
+
+if(strstr(buff, "Hello world")){
+
+}
+
+```
+
+> **kopira s2 u s1**
+
+```c
+
+strcpy(s1, s2);
+
+```
 
 <br>
 
@@ -76,6 +95,17 @@ FILE * f;
 ```c
 
 f = fopen("/proc/self/status", "r");
+
+```
+
+> **proveravamo da li je fajl otvoren**
+
+```c
+
+ if(!f){
+   printf("doslo je do greske");
+   return -1;
+ }
 
 ```
 

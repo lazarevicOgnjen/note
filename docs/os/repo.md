@@ -1,3 +1,7 @@
+> **na kolokvijumu je potrebno da se lokalno preuzme a zatim commituje repozitorijum**
+
+<br>
+
 kloniranje
 ---
 

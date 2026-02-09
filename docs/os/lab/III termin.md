@@ -10,9 +10,9 @@
 - novi proces **nasledjuje sav kod i vrednosti promenljivih** od roditelja
 
 
-<br>
+<br><br>
 
-**fork**
+**kreiranje procesa**
 ---
 
 **I slucaj** kada nam treba samo jedan proces dete
@@ -55,6 +55,8 @@ int main(){
 }
 
 ```
+
+<br>
 
 **II slucaj** kada nam treba vise
 ```c
@@ -159,5 +161,139 @@ int main() {
 }
 
 ```
+
+<br><br>
+
+**komunikacija izmedju procesa**
+---
+
+🚨 **BITNO**
+
+komunikacija moze da se uspostavi preko:
+1. datavoda
+2. signala
+3. deljene memorije
+
+<br>
+
+**primeri:**
+
+- datavodi (jednosmerna komunikacija)
+```c
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+
+int main() {
+    int pipe_fd[2];  // pipe_fd[0] = read end, pipe_fd[1] = write end
+    pid_t pid;
+    char buffer[100];
+    
+    // Create pipe BEFORE fork
+    if (pipe(pipe_fd) == -1) {
+        perror("pipe failed");
+        exit(1);
+    }
+    
+    pid = fork();
+    
+    if (pid < 0) {
+        perror("fork failed");
+        exit(1);
+    }
+    else if (pid == 0) {
+        // CHILD: Close write end, read from pipe
+        close(pipe_fd[1]);  // Close unused write end
+        
+        read(pipe_fd[0], buffer, sizeof(buffer));
+        printf("Child received: %s\n", buffer);
+        
+        close(pipe_fd[0]);
+        exit(0);
+    }
+    else {
+        // PARENT: Close read end, write to pipe
+        close(pipe_fd[0]);  // Close unused read end
+        
+        const char *msg = "Hello from parent!";
+        write(pipe_fd[1], msg, strlen(msg) + 1);
+        
+        close(pipe_fd[1]);
+        wait(NULL);  // Wait for child
+    }
+    
+    return 0;
+}
+
+```
+
+<br>
+
+- datavodi (dvosmerna komunikacija)
+```c
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+
+int main() {
+    int parent_to_child[2];  // Parent writes, child reads
+    int child_to_parent[2];  // Child writes, parent reads
+    pid_t pid;
+    char buffer[100];
+    
+    pipe(parent_to_child);
+    pipe(child_to_parent);
+    
+    pid = fork();
+    
+    if (pid == 0) {
+        // CHILD
+        close(parent_to_child[1]);  // Close write end of first pipe
+        close(child_to_parent[0]);  // Close read end of second pipe
+        
+        // Read from parent
+        read(parent_to_child[0], buffer, sizeof(buffer));
+        printf("Child got: %s\n", buffer);
+        
+        // Send response
+        const char *response = "Hi parent!";
+        write(child_to_parent[1], response, strlen(response) + 1);
+        
+        close(parent_to_child[0]);
+        close(child_to_parent[1]);
+        exit(0);
+    }
+    else {
+        // PARENT
+        close(parent_to_child[0]);  // Close read end of first pipe
+        close(child_to_parent[1]);  // Close write end of second pipe
+        
+        // Send to child
+        write(parent_to_child[1], "Hello child!", 13);
+        
+        // Read response
+        read(child_to_parent[0], buffer, sizeof(buffer));
+        printf("Parent got: %s\n", buffer);
+        
+        close(parent_to_child[1]);
+        close(child_to_parent[0]);
+        wait(NULL);
+    }
+    
+    return 0;
+}
+
+```
+
+
+
+
+
+
+
 
 

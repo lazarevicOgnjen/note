@@ -1,7 +1,5 @@
 **terminal**
 
-<br>
-
 > **direktorijum**
 
 **`pwd`** - utvrditi u kom direktorijumu se trenutno nalazite

@@ -74,12 +74,6 @@ pid_t wait (pid_t pid, int *status-ptr);
 
 ---
 
-- ?????????
-```c
-
-void exit(int status);
-
-```
 
 **PID**
 ---
@@ -95,5 +89,6 @@ PID roditeljskog procesa
 ```c
 pid_t getppid();
 ```
+
 
 

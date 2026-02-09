@@ -5,7 +5,7 @@
 - stdlib.h
 - string.h
 
-<br>
+<br><br>
 
 **argumenti**
 ---
@@ -19,7 +19,7 @@ int main(int argc, char* argv[]){
 
 ```
 
-<br>
+<br><br>
 
 **konverzija**
 ---
@@ -32,7 +32,7 @@ tmp = atof(argv[i]);
 
 ```
 
-<br>
+<br><br>
 
 **rad sa stringovima**
 ---
@@ -63,7 +63,7 @@ strcpy(s1, s2);
 
 ```
 
-<br>
+<br><br>
 
 **kastovanje**
 ---
@@ -77,7 +77,7 @@ y = (double) x;
 
 ```
 
-<br>
+<br><br>
 
 **fajlovi**
 ---
@@ -152,7 +152,7 @@ fgets(buff, MAX_BUFF, f2);
 
 ```
 
-<br>
+<br><br>
 
 **buffer**
 ---

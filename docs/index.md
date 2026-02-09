@@ -1,1 +1,1 @@
-> **beleske za v semestar**
+> **nezvanicni elfak sajt kreiran od strane studenata**

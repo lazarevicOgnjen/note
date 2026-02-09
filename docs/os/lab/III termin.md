@@ -21,14 +21,22 @@
 
 ```
 
+<br>
+
 **fork**
 ---
 
+- kreiramo novi proces
 ```c
 
-pid_t fork(); // kreiramo novi proces
+pid_t fork();
 
-// provera koji se proces izvrsava
+```
+
+---
+
+proveravamo koji se proces izvrsava
+```c
 switch( cpid=fork() ){
 
   case -1:
@@ -46,11 +54,46 @@ switch( cpid=fork() ){
 
 ```
 
+---
 
+cekamo da se svi procesi deca zavrse
+```c
 
+pid_t wait (int *status-ptr);
 
+```
 
+---
 
+cekamo da se konkretan proces dete zavrsi
+```c
+
+pid_t wait (pid_t pid, int *status-ptr);
+
+```
+
+---
+
+- ?????????
+```c
+
+void exit(int status);
+
+```
+
+**PID**
+---
+
+PID tekuceg procesa
+```c
+pid_t getpid();
+```
+
+---
+
+PID roditeljskog procesa
+```c
+pid_t getppid();
 
 
 

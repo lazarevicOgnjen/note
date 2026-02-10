@@ -148,8 +148,67 @@ struct mymsgbuf{
 
 ```
 
+<br><br>
+
+**Primer za poruke**
+---
+
+```
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/ipc.h>
+#include <sys/msg.h>
+#include <string.h>
+#include <time.h>
+#include <sys/wait.h>
+
+struct mymsgbuf{
+
+	long mtype;
+	char mtext[10];
+
+};
+
+int main(){
+
+	int msqid;
+	pid_t pid;
+	struct mymsgbuf bafer;
+	bafer.mtype = 1;
+
+	char ime[10] = "user";
 
 
+	msqid = msgget(10104, 0666 | IPC_CREAT);
+
+	pid = fork();
+
+	if(pid == 0){ // dete
+
+		msgrcv(msqid, &bafer.mtext, 10, 0, 0);
+		printf("poruka: %s\n", bafer.mtext);
+		exit(0);
+
+	}else{ // roditelj
+
+		msgsnd(msqid, &ime, strlen(ime)+1, 0);
+
+
+		wait(NULL);
+		msgctl(msqid, IPC_RMID,NULL);
+
+	}
+	
+	
+
+	return 0;
+
+}
+
+```
 
 
 

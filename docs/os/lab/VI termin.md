@@ -214,7 +214,7 @@ int main(){
 
 <br>
 
-- Korišćenjem programskog jezika C napisati UNIX/Linux programkoji učitava podatke iz tekstualne datoteke cela (red po red) i zatim korišćenjem reda poruka sve parne redove šalje procesu koji konvertuje sva slova u velika i zapisuje ih u datoteku polal, a sve neparne redove procesu koji konvertuje sva slova u mala i zapisuje ih u datoteku pola2.
+- Korišćenjem programskog jezika C napisati UNIX/Linux program koji učitava podatke iz tekstualne datoteke cela (red po red) i zatim korišćenjem reda poruka sve parne redove šalje procesu koji konvertuje sva slova u velika i zapisuje ih u datoteku pola1, a sve neparne redove procesu koji konvertuje sva slova u mala i zapisuje ih u datoteku pola2.
 
 ```
 

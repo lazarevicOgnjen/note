@@ -1,4 +1,4 @@
-**Signali i redovi poruka**
+> **Signali i redovi poruka**
 
 <br>
 
@@ -121,6 +121,8 @@ Svaka poruka ima isti oblik:
 - duzinu poruke
 - bajtove sa podacima koji predstavljaju poruku navedene duzine
 
+<br><br>
+
 **Biblioteke**
 
 ```
@@ -130,6 +132,21 @@ Svaka poruka ima isti oblik:
 
 ```
 
+<br><br>
+
+**Struktura poruke**
+---
+
+```
+
+struct mymsgbuf{
+
+	long mtype;
+	char mtext[50];
+
+};
+
+```
 
 
 

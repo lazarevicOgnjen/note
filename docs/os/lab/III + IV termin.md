@@ -22,6 +22,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/types.h>
+#include <sys/wait.h>
 
 int main(){
 
@@ -186,8 +187,10 @@ komunikacija moze da se uspostavi preko: <br>
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 
 int main() {
     int pipe_fd[2];  // pipe_fd[0] = read end, pipe_fd[1] = write end
@@ -240,6 +243,8 @@ int main() {
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 #include <string.h>
 
 int main() {
@@ -291,6 +296,7 @@ int main() {
 }
 
 ```
+
 
 
 

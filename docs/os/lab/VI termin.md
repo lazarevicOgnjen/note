@@ -149,6 +149,23 @@ struct mymsgbuf{
 
 ```
 
+<br>
+
+**🚨 NAPOMENA**
+---
+
+```
+msgget(key, flags)
+   │      │
+   │      └── permissions + options
+   │          0666 = rw-rw-rw- (anyone can read/write)
+   │          IPC_CREAT = create if doesn't exist
+   │
+   └── unique identifier (like a "phone number")
+       10104 = your custom number, any int works
+       or: ftok("file", 'a') for auto-generated
+```
+
 <br><br>
 
 **Primer za poruke**
@@ -211,25 +228,7 @@ int main(){
 
 }
 
-```
-
-<br>
-
-**🚨 NAPOMENA**
----
-
-```
-msgget(key, flags)
-   │      │
-   │      └── permissions + options
-   │          0666 = rw-rw-rw- (anyone can read/write)
-   │          IPC_CREAT = create if doesn't exist
-   │
-   └── unique identifier (like a "phone number")
-       10104 = your custom number, any int works
-       or: ftok("file", 'a') for auto-generated
-```
-	   
+```	   
 
 <br>
 

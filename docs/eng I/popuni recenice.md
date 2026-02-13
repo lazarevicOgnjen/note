@@ -12,21 +12,20 @@
 | 8. I had to use my laptop this morning while my PC (fix) \_\_\_\_\_\_\_.                                                             | **was being fixed**    |
 
 
----
----
+<br> <br>
 
 
 
 <img width="757" height="357" alt="{4D9B9C95-C71C-4E19-9DB9-13F6A3B07CBA}" src="https://github.com/user-attachments/assets/3ae3451b-e450-40a2-963e-86879c32a69b" />
 
-Part 1: Choose and Underline the Correct Words
+Part 1: Choose and Underline the Correct Words <br>
 | # | Answer                   | Full Sentence                                                                                                                                                    |
 | - | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1 | **allows**               | ... there's a setting on the GPS that <u>allows</u>/prevents it to detect the movement.                                                                          |
 | 2 | **prevents**             | ... an alarm sounds to warn you, and allows/<u>prevents</u> the boat from drifting unnoticed.                                                                    |
 | 3 | **ensures**, **enables** | ... and <u>ensures</u>/enables that you don't lose track of where you were, which then enables/<u>ensures</u> you to turn round and come back to the same point. |
 
-Part 2: Complete with Allowing or Preventing Verbs
+Part 2: Complete with Allowing or Preventing Verbs <br>
 | Blank | Answer      | Explanation                                                                                 |
 | ----- | ----------- | ------------------------------------------------------------------------------------------- |
 | 1     | **enable**  | The core function is to **enable** you to locate your position (allows you to do something) |
